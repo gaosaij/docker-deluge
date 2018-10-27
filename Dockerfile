@@ -1,7 +1,7 @@
 FROM ubuntu:trusty
 
 RUN wget http://download.deluge-torrent.org/source/deluge-1.3.9.tar.gz
-    tar -zxvf deluge-1.3.9
+    tar -xvzf deluge-1.3.9
     cd deluge-1.3.9
     sudo python setup.py build
     sudo python setup.py install
