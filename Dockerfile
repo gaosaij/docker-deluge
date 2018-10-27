@@ -1,10 +1,10 @@
 FROM ubuntu:trusty
 
-RUN apt-get update -q && \
-    apt-get install -qy software-properties-common && \
-    add-apt-repository ppa:deluge-team/ppa && \
-    apt-get update -q && \
-    apt-get install -qy deluged deluge-web
+RUN wget http://download.deluge-torrent.org/source/deluge-1.3.9.tar.gz
+    tar -zxvf deluge-1.3.9
+    cd deluge-1.3.9
+    sudo python setup.py build
+    sudo python setup.py install
 
 ADD start.sh /start.sh
 
